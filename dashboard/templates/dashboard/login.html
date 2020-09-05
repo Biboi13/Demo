@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+{% load crispy_forms_tags%}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="LoudBox Website">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Loudbox | Login</title>
+
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'font-awesome/css/font-awesome.css'%}" rel="stylesheet">
+
+    <link href="{% static 'css/animate.css'%}" rel="stylesheet">        
+         
+          <link href="{% static 'css/main.css' %}" rel="stylesheet">
+          <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          <link rel="icon" type="image/png" href="assets/images/loudbox_logo_icon.png" />
+          <link rel="icon" type="image/png" href=" {% static  'img/loudbox_logo_icon.png' %}" />
+
+
+</head>
+
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow closed-sidebar-mobile closed-sidebar">
+        <div class="app-container closed-sidebar-mobile closed-sidebar">
+            <div class="h-100">
+                <div class="h-100 no-gutters row login">
+                
+                    <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-4">
+                        <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
+                            
+                            <h2 class="mb-10" style="text-align:center; ">
+                                
+                     
+                                <span class="d-block" >Welcome to</span>
+                                <img src="{% static 'img/loudbox_logo.svg' %}" alt="loudbox LOGO" width="50%"  class="brand ">
+                              
+                            </h2>
+                        
+                            <div class="divider row mt-5"></div>
+                            <div>
+                                                    
+                                    <form class="m-t" style="font-size:15px;" role="form" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            {{form|crispy}}
+                                        </div>
+                                        <div class="divider row"></div>
+                                        <button type="submit" class="btn  block full-width m-b" style="background: linear-gradient(to left, black, rgb(49, 48, 48)); color: aliceblue; font-size:15px;">Login</button>
+                                       
+                                        <a href="{% url 'password_reset'%}"  style="color: black; font-size:15px;"><small>Forgot password?</small></a>
+
+
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Mainly scripts -->
+    <script src="{% static 'js/jquery-2.1.1.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
